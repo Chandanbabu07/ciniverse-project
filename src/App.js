@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from "react-redux";
+import "./App.css";
+import { CategoryPopup } from "./Components/CategoryPopup";
+import { HeaderMenu } from "./Components/HeaderMenu";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { MoviesCards } from "./Components/MoviesCards";
+import { MovieFooter } from "./Components/MovieFooter";
 
 function App() {
+  const { categoryHover } = useSelector((state) => state.appScene);
+
+  console.log("categoryHover", categoryHover);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/Movie-Review" element={<HeaderMenu></HeaderMenu>} />
+        </Routes>
+      </Router>
+      {categoryHover && <CategoryPopup></CategoryPopup>}
+      <MoviesCards></MoviesCards>
+      <MovieFooter></MovieFooter>
     </div>
   );
 }
