@@ -27,6 +27,10 @@ const HeroMoviePoster = styled.div`
     ),
     url(${(props) => props.logo});
   background-size: cover;
+
+  @media screen and (max-width: 767px) {
+    background-position: center;
+  }
 `;
 
 const HeroMovieText = styled.div`
@@ -37,6 +41,12 @@ const HeroMovieText = styled.div`
   text-align: left;
   left: 100px;
   font-size: 2rem;
+
+  @media screen and (max-width: 767px) {
+    font-size: 21px;
+    width: 80%;
+    left: 60px;
+  }
 `;
 const HeroMovieTitle = styled.h2``;
 const HeroMovieDescriptionWrapper = styled.div``;

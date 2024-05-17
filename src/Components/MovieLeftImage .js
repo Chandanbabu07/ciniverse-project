@@ -11,6 +11,11 @@ const MainWrapper = styled.div`
   grid-template-columns: 33.3% 33.3% 33.3%;
   padding: 1rem;
   gap: 4px;
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 100%;
+    padding: 0;
+  }
 `;
 
 const LeftImageWrapper = styled.div`
@@ -29,6 +34,10 @@ const TextWrap = styled.div`
 const Image = styled.img`
   height: 22rem;
   margin-top: 3px;
+
+  @media screen and (max-width: 767px) {
+    height: 17rem;
+  }
 `;
 
 const MovieTitleWrapper = styled.div``;
@@ -40,6 +49,15 @@ const MovieTitle = styled.h1`
   text-align: left;
   padding-left: 30px;
   font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+
+  @media screen and (max-width: 767px) {
+    font-size: 11px;
+  }
 `;
 
 const MovieYear = styled.span`
@@ -60,6 +78,10 @@ const MovieDescription = styled.p`
   display: -webkit-box;
   -webkit-line-clamp: 6; /* number of lines to show */
   -webkit-box-orient: vertical;
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+  }
 `;
 
 const MovieOptions = styled.div``;
@@ -71,6 +93,11 @@ const MovieUL = styled.ul`
   gap: 10px;
   padding: 0 30px;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 767px) {
+    gap: 3px;
+    padding: 0 15px;
+  }
 `;
 
 const MovieLI = styled.li`
@@ -80,6 +107,10 @@ const MovieLI = styled.li`
   border-bottom: 1px solid green;
   padding: 3px;
   transition: all 0.7s;
+
+  @media screen and (max-width: 767px) {
+    font-size: 9px;
+  }
 
   &:hover {
     background-color: green; /* Change background color on hover */
@@ -95,6 +126,10 @@ const MovieLanguageandRatingsUL = styled.ul`
   display: flex;
   gap: 76px;
   padding: 0 30px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+  }
 `;
 
 const MovieLanguageandRatingsLI = styled.li`

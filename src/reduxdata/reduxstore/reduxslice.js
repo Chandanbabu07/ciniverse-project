@@ -24,6 +24,7 @@ export const getMovies = createAsyncThunk("appScene/getMovies", async () => {
 const initialState = {
   categoryHover: false,
   movieList: null,
+  showNavSlider: false,
 };
 
 const appSlice = createSlice({
@@ -33,6 +34,9 @@ const appSlice = createSlice({
     setCategoryHover: (state, action) => {
       state.categoryHover = action.payload;
     },
+    setShowNavSlider: (state, action) => {
+      state.showNavSlider = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getMovies.fulfilled, (state, action) => {
@@ -41,5 +45,5 @@ const appSlice = createSlice({
   },
 });
 
-export const { setCategoryHover } = appSlice.actions;
+export const { setCategoryHover, setShowNavSlider } = appSlice.actions;
 export default appSlice.reducer;
